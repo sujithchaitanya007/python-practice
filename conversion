@@ -1,0 +1,49 @@
+## Integer Conversion (int())  
+# Any data type can be converted to an integer except complex numbers  
+
+print(int(123.987))  # Converts float to int (removes decimal) -> Output: 123  
+print(int(True))  # Boolean True converts to 1 -> Output: 1  
+print(int(False))  # Boolean False converts to 0 -> Output: 0  
+print(int("10"))  # Converts string containing number -> Output: 10  
+
+# The following conversions will not work (will raise an error):  
+# print(int(10+5j))  # Complex numbers cannot be converted to int  
+# print(int("10.5"))  # String containing a decimal value  
+# print(int("ten"))  # String containing text  
+# print(int(0B1111))  # Binary format conversion requires 'int' with base (e.g., int('1111', 2))  
+
+## Float Conversion (float())  
+# Adds decimals when converting numbers  
+
+print(float(10))  # Converts int to float -> Output: 10.0  
+print(float(True))  # Converts True to float -> Output: 1.0  
+print(float(False))  # Converts False to float -> Output: 0.0  
+print(float("10"))  # Converts string containing a number -> Output: 10.0  
+
+# The following conversions will not work (will raise an error):  
+# print(float(10+5j))  # Complex numbers cannot be converted to float  
+# print(float("ten"))  # String containing text  
+# print(float("0B1111"))  # Binary format not directly convertible  
+
+## Boolean Conversion (bool())  
+# Booleans return True or False based on values  
+
+# Integers: 0 is False, any other number is True  
+print(bool(0))  # False  
+print(bool(1))  # True  
+print(bool(5))  # True  
+
+# Floats: 0.0 is False, any other float is True  
+print(bool(10.5))  # True  
+print(bool(0.178))  # True  
+print(bool(0.0))  # False  
+
+# Complex Numbers: If both real and imaginary parts are 0, returns False; otherwise, True  
+print(bool(10 - 2j))  # True  
+print(bool(0 + 1.5j))  # True  
+print(bool(0 + 0j))  # False  
+
+# Strings: Empty string is False, any other string is True  
+print(bool("true"))  # True  
+print(bool("false"))  # True  
+print(bool(""))  # False  
