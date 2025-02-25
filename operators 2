@@ -1,0 +1,49 @@
+## Arithmetic Operators  
+print(12 + 5)   # Addition  
+print(12 - 5)   # Subtraction  
+print(12 * 5)   # Multiplication  
+print(12 ** 2)  # Exponentiation (12 raised to the power of 2)  
+print(12 / 5)   # Division (always returns a float)  
+print(12 // 5)  # Floor division (rounds down to the nearest whole number)  
+print(7 % 5)    # Modulus (remainder of 7 divided by 5)  
+
+## Logical and Comparison Operators  
+# Comparisons return Boolean values (True or False)  
+print(8 > 3)    # Greater than (returns True)  
+print(8 >= 3)   # Greater than or equal to (returns True)  
+print(8 != 8)   # Not equal to (returns False)  
+print(8 == 8)   # Equal to (returns True)  
+print(8 == 5 + 3)  # Evaluates if 8 is equal to (5+3), returns True  
+
+### = is an assignment operator, whereas == is a comparison operator. Do not confuse them!  
+
+## Equality Operators  
+print(15 == 30)  # False  
+print(15 != 30)  # True  
+print(1 == True)  # True (as any non-zero number is considered True)  
+print(False == False)  # True  
+print("python" == "python")  # True  
+print(20 == "python")  # False (different data types)  
+
+### Logical Operators  
+# 'and' -> Both conditions must be True for the result to be True  
+x = 15  
+y = 25  
+if x > 10 and y > 20:  
+    print("Both x and y are greater than their respective values")  
+
+if x > 20 and y > 20:  
+    print("This won't print as one condition is False")  
+
+# 'or' -> At least one condition must be True for the result to be True  
+m = 10  
+n = -3  
+if m > 0 or n > 0:  
+    print("At least one of m or n is greater than 0")  
+
+# 'not' -> Negates the condition  
+p = False  
+if not p:  
+    print("p is False")  
+else:  
+    print("p is True")  
