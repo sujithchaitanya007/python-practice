@@ -1,0 +1,51 @@
+# If-Else
+num = 25
+if num % 2 == 0:
+    print("Even")
+else:
+    print("Odd")
+
+# If-Elif-Else
+age = 20
+if age >= 60:
+    print("Senior Citizen")
+elif age >= 18:
+    print("Adult")
+else:
+    print("Minor")
+
+# Nested If
+salary = 50000
+if salary > 30000:
+    if salary > 40000:
+        print("High Salary")
+    else:
+        print("Average Salary")
+
+# For Loop
+for i in range(5, 0, -1):
+    print(i)
+
+# While Loop
+i = 1
+while i <= 5:
+    print(i)
+    i += 1
+
+# Break
+for x in range(1, 10):
+    if x == 7:
+        break
+    print(x)
+
+# Continue
+for y in range(1, 6):
+    if y == 3:
+        continue
+    print(y)
+
+# Pass
+for z in range(1, 4):
+    if z == 2:
+        pass
+    print(z)
