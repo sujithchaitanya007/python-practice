@@ -1,0 +1,109 @@
+import time
+users = {
+    '1234': {'balance': 100000, 'transactions': []},
+    '2307': {'balance': 230000, 'transactions': []},
+    '9846': {'balance': 7000, 'transactions': []},
+    '7624': {'balance': 90000, 'transactions': []}
+}
+
+blocked_users = set()
+
+def authentication():
+    attempts = 3
+    while attempts > 0:
+        pin = input('Enter the 4 digits pin: ')
+        if pin in blocked_users:
+            print('Your card is blocked. Please contact your bank.')
+            return None
+        if pin in users:
+            print('Authentication is successful')
+            return pin
+        else:
+            attempts -= 1
+            print(f'Incorrect pin. Attempts left: {attempts}\n')
+
+    print('\nToo many attempts. Your card has been blocked')
+    blocked_users.add(pin)
+    return None
+
+def menu():
+    print('\n ATM Menu: \n')
+    print('1. Check Balance')
+    print('2. Deposit Money')
+    print('3. Withdraw')
+    print('4. Transaction History')
+    print('5. Change PIN')
+    print('6. Exit')
+
+def check_balance(pin):
+    print(f"\n Your current balance is: {users[pin]['balance']}\n")
+
+def deposit(pin):
+    amount = float(input('Enter the amount to deposit: '))
+    if amount > 0:
+        users[pin]['balance'] += amount
+        users[pin]['transactions'].append(f'Deposited amount: {amount}')
+        print(f'{amount} has been deposited')
+    else:
+        print('Invalid amount. Try again!')
+
+def withdraw(pin):
+    amount = float(input('Enter the amount to withdraw: '))
+    if amount > 0 and amount <= users[pin]['balance']:
+        users[pin]['balance'] -= amount
+        users[pin]['transactions'].append(f'Withdrawn: {amount}')
+        print(f'{amount} withdrawn successfully')
+    elif amount > users[pin]['balance']:
+        print('Insufficient balance')
+    else:
+        print('Invalid amount. Try again!')
+
+def transaction(pin):
+    print('\n Transaction History: \n')
+    if users[pin]['transactions']:
+        for i, transaction in enumerate(users[pin]['transactions'], 1):
+            print(f'{i}. {transaction}')
+    else:
+        print('No transaction history available!')
+    print()
+
+def change_pin(pin):
+    new_pin = input('Enter the new 4-digit pin: ')
+    if new_pin.isdigit() and len(new_pin) == 4 and new_pin not in users:
+        users[new_pin] = users.pop(pin)
+        print('PIN changed successfully!')
+        return new_pin
+    else:
+        print('Invalid pin. Try again')
+        return pin
+
+def atm_simulator():
+    print('\n Welcome to the ATM! \n')
+
+    pin = authentication()
+    if not pin:
+        return
+    
+    while True:
+        menu()
+        choice = input('Enter your choice: ')
+
+        if choice == '1':
+            check_balance(pin)
+        elif choice == '2':
+            deposit(pin)
+        elif choice == '3':
+            withdraw(pin)
+        elif choice == '4':
+            transaction(pin)
+        elif choice == '5':
+            pin = change_pin(pin)
+        elif choice == '6':
+            print('\n Thank you for using our ATM!\n')
+            break
+        else:
+            print('Invalid choice. Please select again')
+
+        time.sleep(2)
+
+atm_simulator()
