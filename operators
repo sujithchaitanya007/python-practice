@@ -1,61 +1,44 @@
-## Assigning values to variables
 x = 15  
-print(x)  # Outputs 15  
-
-## Addition assignment  
-x += 7  # Equivalent to x = x + 7  
 print(x)  
 
-## Subtraction assignment  
-x -= 4  # Subtracts 4 from the existing value of x  
+x += 7  
 print(x)  
 
-## Multiplication assignment  
-x *= 3  # Multiplies the current value of x by 3  
+x -= 4  
 print(x)  
 
-## Division assignment  
-x /= 5  # Divides x by 5 (Always results in a float)  
+x *= 3  
 print(x)  
 
-## Modulus assignment  
-x %= 4  # Stores the remainder when x is divided by 4  
+x /= 5  
 print(x)  
 
-## Exponentiation assignment  
-x **= 3  # Raises x to the power of 3  
+x %= 4  
 print(x)  
 
-## Floor division assignment  
-x //= 2  # Performs division and rounds down the result  
+x **= 3  
 print(x)  
 
-### Assigning calculations to variables  
+x //= 2  
+print(x)  
 
-# Addition  
 a = 12 + 6  
 print(a)  
 
-# Subtraction  
 b = 20 - 8  
 print(b)  
 
-# Multiplication  
 c = 7 * 4  
 print(c)  
 
-# Division  
-d = 36 / 6  # Always results in a float  
+d = 36 / 6  
 print(d)  
 
-# Modulus  
-e = 25 % 4  # Gives the remainder of 25 divided by 4  
+e = 25 % 4  
 print(e)  
 
-# Exponents  
-f = 5 ** 3  # 5 raised to the power of 3  
+f = 5 ** 3  
 print(f)  
 
-# Floor division  
-g = 17 // 3  # 17 divided by 3 and rounded down  
-print(g) 
+g = 17 // 3  
+print(g)  
