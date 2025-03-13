@@ -1,0 +1,35 @@
+import math
+
+def factorial(n):
+    return math.factorial(n)
+
+def power(base, exp):
+    return base ** exp
+
+def square_root(n):
+    return math.sqrt(n)
+
+while True:
+    print("\n=== Advanced Calculator ===")
+    print("1. Factorial")
+    print("2. Power")
+    print("3. Square Root")
+    print("4. Exit")
+
+    choice = input("Enter your choice (1-4): ")
+
+    if choice == "1":
+        num = int(input("Enter a number: "))
+        print("Factorial:", factorial(num))
+    elif choice == "2":
+        base = float(input("Enter base: "))
+        exp = float(input("Enter exponent: "))
+        print("Result:", power(base, exp))
+    elif choice == "3":
+        num = float(input("Enter a number: "))
+        print("Square Root:", square_root(num))
+    elif choice == "4":
+        print("Exiting... Have a great day!")
+        break
+    else:
+        print("Invalid choice! Please try again.")
