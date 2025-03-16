@@ -18,7 +18,7 @@ print(int("10"))  # Converts string containing number -> Output: 10
 print(float(10))  # Converts int to float -> Output: 10.0  
 print(float(True))  # Converts True to float -> Output: 1.0  
 print(float(False))  # Converts False to float -> Output: 0.0  
-print(float("10"))  # Converts string containing a number -> Output: 10.0  
+print(float("210"))  # Converts string containing a number -> Output: 10.0  
 
 # The following conversions will not work (will raise an error):  
 # print(float(10+5j))  # Complex numbers cannot be converted to float  
