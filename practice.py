@@ -1,4 +1,4 @@
-sujith = 7
+sujith = 723
 Sujith = 23
 print(sujith)  
 print(Sujith)  
